@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 // const mainRoutes = require('./routes/main');
 const authRoutes = require('./routes/auth');
+const cabinetRouter = require('./routes/cabinet')
 const cookieParser = require('cookie-parser')
 const hbs = require('hbs');
 const app = express();
@@ -28,5 +29,6 @@ hbs.registerPartials('views/partials');
 app.get('*', checkUser);
 app.get('/',(req, res) => res.render('main'));
 app.use('/', authRoutes);
+app.use('/cabinet',cabinetRouter)
 
 module.exports = app;
