@@ -14,7 +14,7 @@ const Tea = require('../models/Tea');
 
 module.exports.cabinet_get = async function (req, res) {
   const teas = await Tea.find();
-  console.log(teas);
+//   console.log(teas);
   res.render('cabinet', { teas });
 };
 module.exports.cabinet_delete = async function (req, res) {

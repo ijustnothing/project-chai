@@ -11,9 +11,9 @@ body {
   background-size: cover;
   background-position: center;
   color: white;
+  overflow: auto;
   font-family: 'Roboto', sans-serif;
-  height: 100%;
-  overflow: hidden;
+  height: 100vh;
 }
 .main_title {
   margin-top: 140px;
@@ -29,7 +29,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  height: 100vh;
+  height: 90vh;
 }
 .container h1 {
   text-align: center;
@@ -124,6 +124,10 @@ body {
   width: 100%;
   justify-content: space-between;
 }
+.wrapper li a{
+  text-decoration: none;
+  color:white;
+}
 .wrapper .delete {
   border: 0;
   color: white;
@@ -141,4 +145,66 @@ body {
 .wrapper h2 {
   font-size: 40px;
   letter-spacing: 10px;
+}
+
+
+/* TEA styles */
+
+.teaList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  width: 500px;
+}
+.teaList .elem{
+  /* text-align: center!important; */
+  display: flex;
+  text-align: center;
+  color:white;
+  font-size: 24px;
+  justify-content: center;
+  background-color: rgba(114, 98, 89, 0.767);
+  border-radius: 20px;
+  margin-bottom: 24px;
+  /* border: 4px solid tomato; */
+  padding: 10px;
+  color:rgb(255, 255, 255);
+}
+.teaList .name{
+  color:white;
+  font-size: 30px;
+  font-weight: 700;
+}
+.elem-img img{
+  border-radius: 50%;
+  width: 280px;
+}
+
+/* form */
+
+.comments{
+  text-align: center;
+  margin-top: 48px;
+}
+.comments__input{
+  padding-left: 8px;
+  outline: none;
+  height: 24px;
+  width: 240px;
+}
+.comments__btn{
+  padding: 6px 0;
+  background-color: tomato;
+  border: 0;
+  border-radius: 4px;
+  max-width: 100px;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  color: white;
+}
+.comments__btn:hover {
+  background-color: rgb(253, 85, 55);
 }

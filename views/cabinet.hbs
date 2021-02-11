@@ -4,7 +4,7 @@
 <ul class="list">
     <h2>List of teas:</h2>
     {{#each teas}}
-    <li class="teaName">{{this.name}} <button id='{{this._id}}' class="delete">delete</button></li>
+    <li id="{{this._id}}" class="teaName"><a class="linkTea" href="{{this._id}}">{{this.name}}</a> <button id='{{this._id}}' class="delete">delete</button></li>
     {{/each}}
 </ul>
 <form class="signup" class="cabinet">
@@ -15,8 +15,8 @@
   <input type="text" name="location"  />
   <label for="about">About</label>
   <textarea name="text"cols="30" rows="10"></textarea>
-  <label for="text">Img</label>
-  <input type="file" name="file">
+  {{!-- <label for="text">Img</label>
+  <input type="file" name="file"> --}}
   <button>Add Tea</button>
 </form>
 </div>
