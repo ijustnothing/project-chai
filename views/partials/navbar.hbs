@@ -3,7 +3,7 @@
       <a href="/" class="brand-logo">Main</a>
       <ul>
           {{#if user}}
-            <li><a href="/cabinet">Welcome, {{user.email}}</a></li>
+            <li><a class="email" href="/cabinet">{{user.email}}</a></li>
             <li><a href="/logout">Log out</a></li>
             {{else}}
             <li><a href="/register">Sign up</a></li>

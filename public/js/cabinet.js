@@ -31,7 +31,7 @@ form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const id = e.target.id;
       const li = e.target.parentElement;
-      console.log(li);
+    //   console.log(li);
       const res = await fetch(`/cabinet/${id}`, {
         method: 'DELETE',
         headers: { 'Content-type': 'application/json' },
@@ -49,7 +49,7 @@ deleteAll.forEach((el) => {
     e.preventDefault();
     const id = e.target.id;
     const li = e.target.parentElement;
-    console.log(li);
+    // console.log(li);
     const res = await fetch(`/cabinet/${id}`, {
       method: 'DELETE',
       headers: { 'Content-type': 'application/json' },
