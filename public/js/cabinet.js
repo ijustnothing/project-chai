@@ -22,6 +22,9 @@ form.addEventListener('submit', async (e) => {
     name,
     id
   });
+  form.name.value = '';
+  form.location.value = '';
+  form.text.value = '';
   const buttons = list.querySelectorAll(`button`)
   buttons.forEach((el) => {
     el.addEventListener('click', async (e) => {
