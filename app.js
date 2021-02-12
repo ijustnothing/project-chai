@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 // const mainRoutes = require('./routes/main');
 const authRoutes = require('./routes/auth');
 const cabinetRouter = require('./routes/cabinet')
+const cabinetUserRouter = require('./routes/cabinetUser')
 const teaRouter = require('./routes/tea')
 const cookieParser = require('cookie-parser')
 const hbs = require('hbs');
@@ -10,7 +11,7 @@ const app = express();
 const { checkUser } = require('./middleware/authMiddleware');
 
 mongoose
-  .connect('mongodb://localhost:27017/jwt', {
+  .connect('mongodb://localhost:27017/tea', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -31,5 +32,6 @@ app.get('*', checkUser);
 app.get('/',(req, res) => res.render('main'));
 app.use('/', authRoutes);
 app.use('/cabinet',cabinetRouter)
+app.use('/cabinetUser',cabinetUserRouter)
 app.use('/',teaRouter)
 module.exports = app;

@@ -1,1 +1,16 @@
-<h1 class="main_title">TEA From PressF</h1>
+
+<h1 class="main_title">Все о чае...</h1>
+ <div id="map" style="width: 1200px; height: 600px"></div>
+
+
+<script type="text/javascript">
+    ymaps.ready(init);
+    function init(){
+        // Создание карты.
+        var myMap = new ymaps.Map("map", {
+            center: [55.76, 37.64],
+            zoom: 2
+        });
+    }
+</script>
+

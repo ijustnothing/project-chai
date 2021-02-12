@@ -51,7 +51,6 @@ const checkLogin = (req, res, next) => {
         next();
       } else {
         let user = await User.findById(decodedToken.id);
-        res.locals.user = user;
         if (user) {
           res.redirect('/');
         }
@@ -63,5 +62,26 @@ const checkLogin = (req, res, next) => {
     next();
   }
 };
+const checkAdmin = (req, res, next) => {
+  const token = req.cookies.jwt;
+  if (token) {
+    jwt.verify(token, 'welcometoTheFavaly', async (err, decodedToken) => {
+      if (err) {
+        res.locals.user = null;
+        next();
+      } else {
+        let user = await User.findById(decodedToken.id);
+        
+        if (user.isAdmin === false) {
+          res.redirect('/cabinetUser');
+        }
+        next();
+      }
+    });
+  } else {
+    res.locals.user = null;
+    next();
+  }
+};
 
-module.exports = { requireAuth, checkUser, checkLogin };
+module.exports = { requireAuth, checkUser, checkLogin, checkAdmin };

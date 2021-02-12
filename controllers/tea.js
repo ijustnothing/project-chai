@@ -18,6 +18,8 @@ module.exports.tea_post = async function (req, res) {
   const post = new Post({ text: comment, author: user._id, tea: tea._id });
   await post.save();
   tea.comments.push(post);
+  user.post.push(post)
   tea.save();
+  user.save();
   res.json(post);
 };
