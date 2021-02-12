@@ -4,15 +4,34 @@ const router = express.Router();
 const { requireAuth } = require('../middleware/authMiddleware');
 const Tea = require('../models/Tea')
 
-router.get('/', requireAuth, controller.cabinet_get);
-router.post('/', async function (req, res) {
-  const { name, location, text } = req.body;
-  console.log(name, location, text);
-  const img = 'https://morechamag.ru/6328-thickbox_default/ivan-chaj-kupecheskij-chernyj-rassypnoj.jpg'
-  const tea = new Tea({ name, location, text,img });
-  await tea.save();
-  res.json(tea);
+const multer = require("multer");
+const storage = multer.memoryStorage();
+const path = require("path");
+const fs = require("fs").promises;
+
+const upload = multer({
+  storage: storage,
 });
-router.delete('/:id', controller.cabinet_delete);
+
+router.get("/", requireAuth, controller.cabinet_get);
+router.post("/", upload.single("myImage"), async function (req, res) {
+  const { name, location, text } = req.body;
+  const { file } = req.file;
+  console.log(">>>>>>>>>>", file);
+
+  await fs.writeFile(
+    path.join(__dirname, "../public/uploads", `${req.file.originalname}`),
+    req.file.buffer
+  );
+    const tea = new Tea({
+    name,
+    location,
+    text,
+    img: `/uploads/${req.file.originalname}`,
+  });
+  await tea.save();
+  res.redirect("/cabinet");
+});
+router.delete("/:id", controller.cabinet_delete);
 
 module.exports = router;

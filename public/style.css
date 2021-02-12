@@ -13,7 +13,6 @@ body {
   color: white;
   overflow: auto;
   font-family: 'Roboto', sans-serif;
-  height: 100vh;
 }
 .main_title {
   margin-top: 140px;
@@ -177,9 +176,19 @@ body {
   font-size: 30px;
   font-weight: 700;
 }
+.elem-img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 500px;
+  overflow: hidden;
+}
 .elem-img img{
   border-radius: 50%;
   width: 280px;
+  min-height: 200px;
+  object-fit: cover;
+  max-height: 200px;
 }
 
 /* form */
@@ -207,4 +216,13 @@ body {
 }
 .comments__btn:hover {
   background-color: rgb(253, 85, 55);
+}
+.wrapper-osob{
+  display: flex;
+  flex-direction: column;
+}
+.wrapper-osob_mod{
+  display: flex;
+  justify-content: space-around;
+  height: 500px;
 }
