@@ -2,7 +2,7 @@ const form = document.querySelector('form');
 const deleteAll = document.querySelectorAll('.delete');
 
 form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+//   e.preventDefault();
   const name = form.name.value;
   const loc = form.location.value;
   const text = form.text.value;

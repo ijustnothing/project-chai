@@ -1,31 +1,33 @@
-<div class="wrapper">
+<div class="wrapper wrapper-osob">
+    <div class="wrapper-osob_mod">
         <div class="elem-img">
             <img src="{{tea.img}}" alt="">
-        </div>
-            <ul>
+            <ul class="listComments">
                 {{#each comment.comments}}
                 <li>{{this.text}}</li>
                 {{/each}}
             </ul>
-    <ul class="teaList">
-            <div class="name">Название чая:</div> 
-        <li class="elem">
-            <br>
-            <div class="teaName">{{tea.name}}</div>
-        </li>
-            <div class="name"> Место культивации:</div>
-        <li class="elem">
-            <div>{{tea.location}}</div>
-        </li>
-            <div class="name">Описание:</div>
-        <li class="elem">
-            <div>{{tea.text}}</div>
-        </li>
-    </ul>
-</div>
-    <div class="comments">
+        </div>
+        <ul class="teaList">
+                <div class="name">Название чая:</div> 
+            <li class="elem">
+                <br>
+                <div class="teaName">{{tea.name}}</div>
+            </li>
+                <div class="name"> Место культивации:</div>
+            <li class="elem">
+                <div>{{tea.location}}</div>
+            </li>
+                <div class="name">Описание:</div>
+            <li class="elem">
+                <div>{{tea.text}}</div>
+            </li>
+        </ul>
+    </div>
+     <div class="comments">
         <form class="comments__form">
             <input class="comments__input" name="comment" type="text" placeholder="Comment">
             <button class="comments__btn">Add Comment</button>
         </form>
     </div>
+</div>

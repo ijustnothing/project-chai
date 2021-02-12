@@ -63,7 +63,7 @@ module.exports.register = async function (req, res) {
     });
     await user.save();
     const token = createToken(user._id);
-    console.log(token);
+    // console.log(token);
     res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(201).json({ user: user._id });
   }
