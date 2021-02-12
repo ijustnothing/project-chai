@@ -6,7 +6,7 @@
 }
 body {
   background-color: rgb(5, 3, 10);
-  background: url('https://c3.emosurf.com/0005cw00npqf/im-main.jpg');
+  background: url('https://in.vgoroden.ru/nekfzujz240jq_1om23sf.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -189,6 +189,7 @@ body {
   min-height: 200px;
   object-fit: cover;
   max-height: 200px;
+  border:4px solid rgba(114, 98, 89, 0.767);
 }
 
 /* form */
