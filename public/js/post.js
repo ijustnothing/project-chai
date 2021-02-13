@@ -6,6 +6,7 @@ comments.addEventListener('submit', async (e) => {
   const email = document.querySelector('.email').innerHTML;
   const { comment } = e.target;
   console.log(teaName);
+  console.log(email,comment.value)
   const res = await fetch('/', {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },

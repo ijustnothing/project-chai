@@ -71,7 +71,6 @@ const checkAdmin = (req, res, next) => {
         next();
       } else {
         let user = await User.findById(decodedToken.id);
-        
         if (user.isAdmin === false) {
           res.redirect('/cabinetUser');
         }
