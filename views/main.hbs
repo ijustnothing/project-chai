@@ -1,7 +1,8 @@
 
-<h1 class="main_title">Все о чае...</h1>
+<h1 class="main_title">Все о чае от Гафарика</h1>
+<br>
  <div id="map" style="width: 1200px; height: 600px"></div>
-
+{{!-- {{tea}} --}}
 
 <script type="text/javascript">
     ymaps.ready(init);
@@ -11,6 +12,16 @@
             center: [55.76, 37.64],
             zoom: 2
         });
+        {{#each teas}}
+        myMap.geoObjects
+       .add(new ymaps.Placemark([{{this.location}}], {
+        hasBaloon: false,
+        balloonContentBody: `<a href='/{{this.id}}'>{{this.nameTea}}</a>`,
+      }, {
+        preset: 'islands#icon',
+        iconColor: '#0095b6'
+      }))
+      {{/each}}
     }
 </script>
 

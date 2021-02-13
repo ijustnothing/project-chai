@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const mainRoutes = require('./routes/main');
+const mainRoutes = require('./routes/main');
 const authRoutes = require('./routes/auth');
 const cabinetRouter = require('./routes/cabinet')
 const cabinetUserRouter = require('./routes/cabinetUser')
@@ -29,7 +29,7 @@ hbs.registerPartials('views/partials');
 
 
 app.get('*', checkUser);
-app.get('/',(req, res) => res.render('main'));
+app.use('/',mainRoutes);
 app.use('/', authRoutes);
 app.use('/cabinet',cabinetRouter)
 app.use('/cabinetUser',cabinetUserRouter)

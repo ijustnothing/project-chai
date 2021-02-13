@@ -185,10 +185,10 @@ body {
 }
 .elem-img img{
   border-radius: 50%;
-  width: 280px;
-  min-height: 200px;
+  width: 300px;
+  min-height: 300px;
   object-fit: cover;
-  max-height: 200px;
+  max-height: 300px;
   border:4px solid rgba(114, 98, 89, 0.767);
 }
 
@@ -225,5 +225,20 @@ body {
 .wrapper-osob_mod{
   display: flex;
   justify-content: space-around;
-  height: 500px;
+  height: 600px;
+}
+.listComments{
+  background-color: rgba(114, 98, 89, 0.767);
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+}
+.list{
+  background-color: rgba(114, 98, 89, 0.767);
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 20px;
+}
+.ymaps-3-1-78-map{
+  border-radius: 100px;
 }

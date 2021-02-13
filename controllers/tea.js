@@ -11,8 +11,9 @@ module.exports.tea_get = async function (req, res) {
   res.render('tea', { tea,comment});
 };
 module.exports.tea_post = async function (req, res) {
-  const { comment, email, teaName } = req.body;
-//   console.log(req.body);
+  const { comment, email, teaName } = req.body; 
+   console.log(req.body);
+
   const tea = await Tea.findOne({ name: teaName });
   const user = await User.findOne({ email: email });
   const post = new Post({ text: comment, author: user._id, tea: tea._id });
